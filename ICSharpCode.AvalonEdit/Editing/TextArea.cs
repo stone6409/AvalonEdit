@@ -705,10 +705,13 @@ namespace ICSharpCode.AvalonEdit.Editing
 			get { return scrollInfo != null ? scrollInfo.HorizontalOffset : 0; }
 		}
 
+		// 关键点：IScrollInfo接口VerticalOffset属性
 		double IScrollInfo.VerticalOffset {
 			get { return scrollInfo != null ? scrollInfo.VerticalOffset : 0; }
 		}
 
+		// 关键点：外部设置ScrollOwner
+		// 由WPF框架ScrollContentPresenter类的HookupScrollingComponents方法调用set
 		ScrollViewer IScrollInfo.ScrollOwner {
 			get { return scrollInfo != null ? scrollInfo.ScrollOwner : null; }
 			set {

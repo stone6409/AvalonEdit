@@ -1343,6 +1343,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			return false;
 		}
 
+		// 使滚动信息无效
 		void OnScrollChange()
 		{
 			ScrollViewer scrollOwner = ((IScrollInfo)this).ScrollOwner;
@@ -1423,13 +1424,17 @@ namespace ICSharpCode.AvalonEdit.Rendering
 				vector.Y = 0;
 
 			if (!scrollOffset.IsClose(vector)) {
-				scrollOffset = vector;
+				scrollOffset = vector; // 关键点：设置滚动位置
 				if (ScrollOffsetChanged != null)
 					ScrollOffsetChanged(this, EventArgs.Empty);
 			}
 		}
 
-		ScrollViewer IScrollInfo.ScrollOwner { get; set; }
+		ScrollViewer IScrollInfo.ScrollOwner 
+		{ 
+			get; 
+			set; 
+		}
 
 		void IScrollInfo.LineUp()
 		{
@@ -1624,6 +1629,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 			return rectangle;
 		}
 
+		// 关键点：使得可见
 		/// <summary>
 		/// Scrolls the text view so that the specified rectangle gets visible.
 		/// </summary>

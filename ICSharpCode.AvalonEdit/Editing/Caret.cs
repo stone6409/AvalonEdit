@@ -447,6 +447,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			BringCaretToView(MinimumDistanceToViewBorder);
 		}
 
+		// 关键点：将插入符号带入视图
 		internal void BringCaretToView(double border)
 		{
 			Rect caretRectangle = CalculateCaretRectangle();

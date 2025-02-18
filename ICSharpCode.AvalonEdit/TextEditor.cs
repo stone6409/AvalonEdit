@@ -270,6 +270,7 @@ namespace ICSharpCode.AvalonEdit
 		public override void OnApplyTemplate()
 		{
 			base.OnApplyTemplate();
+			// 关键点：获取ScrollViewer控件
 			scrollViewer = (ScrollViewer)Template.FindName("PART_ScrollViewer", this);
 		}
 

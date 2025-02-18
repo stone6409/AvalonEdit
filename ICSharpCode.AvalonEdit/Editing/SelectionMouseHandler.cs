@@ -577,6 +577,8 @@ namespace ICSharpCode.AvalonEdit.Editing
 		#endregion
 
 		#region MouseMove
+
+		// 关键点：文本域鼠标移动
 		void textArea_MouseMove(object sender, MouseEventArgs e)
 		{
 			if (e.Handled)
