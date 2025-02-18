@@ -955,6 +955,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 
 			textLayer.SetVisualLines(visibleVisualLines);
 
+			// 关键点：测量重载时计算滚动尺寸
 			SetScrollData(availableSize,
 						  new Size(maxWidth, heightTreeHeight),
 						  scrollOffset);

@@ -37,7 +37,10 @@ namespace ICSharpCode.AvalonEdit.Utils
 		{
 			if (owner == null)
 				throw new ArgumentNullException("owner");
-			return TextFormatter.Create(TextOptions.GetTextFormattingMode(owner));
+			TextFormattingMode textFormattingMode = TextOptions.GetTextFormattingMode(owner);
+			TextFormatter formatter = TextFormatter.Create(textFormattingMode); // 关键点：创建文本格式化器TextFormatter
+
+			return formatter;
 		}
 
 		/// <summary>

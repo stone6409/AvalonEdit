@@ -40,6 +40,7 @@ namespace ICSharpCode.AvalonEdit.Rendering
 		public TextDocument Document { get; set; }
 		public TextRunProperties GlobalTextRunProperties { get; set; }
 
+		// 关键点：获取TextRun
 		public override TextRun GetTextRun(int textSourceCharacterIndex)
 		{
 			try {
